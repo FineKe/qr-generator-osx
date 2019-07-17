@@ -1,0 +1,20 @@
+PODS:
+  - EFQRCode (5.0.0):
+    - swift_qrcodejs (~> 1.1.1)
+  - swift_qrcodejs (1.1.1)
+
+DEPENDENCIES:
+  - EFQRCode (~> 5.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EFQRCode
+    - swift_qrcodejs
+
+SPEC CHECKSUMS:
+  EFQRCode: 07437cfbce3a1e497397a4f3d766c980d8972608
+  swift_qrcodejs: 0bacbfe321a99954c7b8e04c75562007ea4e4f7c
+
+PODFILE CHECKSUM: dd8d03821d52f199ed37a93b3393c6424a8c9190
+
+COCOAPODS: 1.6.0
