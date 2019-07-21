@@ -13,10 +13,15 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var inputText: NSTextField!
     @IBOutlet weak var outputImage: NSImageView!
+    @IBOutlet weak var chooseColorButton: NSButton!
+    
+    var foreground = CGColor(red: 0, green: 0, blue: 1, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        colorButton.wantsLayer=true
+        colorButton.layer?.backgroundColor = foreground
     }
 
     override var representedObject: Any? {
@@ -26,23 +31,42 @@ class ViewController: NSViewController {
     }
 
     @IBAction func buildQR(_ sender: NSButton) {
-        if let image = generateQR(text: inputText.stringValue){
-            outputImage.image = NSImage(cgImage: image, size: outputImage.frame.size)
+        if let tryImage = generateQR(text: inputText.stringValue){
+            outputImage.image = NSImage(cgImage: tryImage, size: outputImage.frame.size)
         }
     }
+    @IBOutlet weak var colorButton: NSButton!
     
     @IBAction func saveTo(_ sender: NSButton) {
+    }
+    @IBAction func test(_ sender: NSButton) {
+        let colorPlane = NSColorPanel.shared
+        colorPlane.mode = .RGB
+        colorPlane.setTarget(self)
+        colorPlane.setAction(#selector(changeColor(sender:)))
+        colorPlane.makeKeyAndOrderFront(self)
     }
     
     private func generateQR(text:String) -> CGImage? {
         
-        if let tryImage = EFQRCode.generate(content: text){
-            print("Create QRCode success:\(tryImage)")
-            return tryImage
+        if let image = EFQRCode.generate(
+            content: text,
+            size: EFIntSize(width: 300, height: 300),
+            backgroundColor: CGColor.clear,
+            foregroundColor: foreground,
+            watermark: nil
+            ){
+            return image
         }else{
             print("Create QRCode failed")
             return nil
         }
+    }
+    @objc
+    private func changeColor(sender:NSColorPanel){
+        let color = sender.color
+        chooseColorButton.layer?.backgroundColor = color.cgColor
+        self.foreground = color.cgColor
     }
 }
 

@@ -710,9 +710,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ez3-gG-Img">
-                                <rect key="frame" x="12" y="225" width="199" height="36"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ez3-gG-Img">
+                                <rect key="frame" x="12" y="225" width="192" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="X6m-wK-aie"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="left" id="R4T-NL-ApX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -749,13 +751,56 @@
                                     <action selector="saveTo:" target="XfG-lQ-9wD" id="tyq-EG-EI9"/>
                                 </connections>
                             </button>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL0-TR-JzM">
+                                <rect key="frame" x="338" y="200" width="100" height="50"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vje-JX-TgN">
+                                        <rect key="frame" x="-2" y="17" width="44" height="17"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="颜色：" id="L6A-DA-owy">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="1Hr-Y4-acb">
+                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Crp-kc-D4r"/>
+                                            <constraint firstAttribute="height" constant="50" id="jMF-f3-4Tg"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="rL3-BD-ig7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="test:" target="XfG-lQ-9wD" id="TUs-kR-CBw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wmM-vu-kee" secondAttribute="bottom" constant="20" id="O4s-Wc-oi9"/>
+                            <constraint firstItem="ez3-gG-Img" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="9" id="SLs-vD-557"/>
+                            <constraint firstAttribute="trailing" secondItem="VL0-TR-JzM" secondAttribute="trailing" constant="42" id="TDh-sg-XhG"/>
                             <constraint firstAttribute="trailing" secondItem="wmM-vu-kee" secondAttribute="trailing" constant="20" id="Z3M-Tu-rqe"/>
+                            <constraint firstItem="VL0-TR-JzM" firstAttribute="leading" secondItem="ez3-gG-Img" secondAttribute="trailing" constant="136" id="eaQ-hT-XTN"/>
+                            <constraint firstItem="ez3-gG-Img" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="gI6-nv-uTH"/>
+                            <constraint firstItem="wmM-vu-kee" firstAttribute="top" secondItem="VL0-TR-JzM" secondAttribute="bottom" constant="28" id="oft-6g-kPu"/>
+                            <constraint firstItem="VL0-TR-JzM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="tG3-U7-pOl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chooseColorButton" destination="1Hr-Y4-acb" id="JUX-jX-jGJ"/>
+                        <outlet property="colorButton" destination="1Hr-Y4-acb" id="zt4-2n-Tdz"/>
                         <outlet property="inputText" destination="ez3-gG-Img" id="5I8-pV-haf"/>
                         <outlet property="outputImage" destination="wmM-vu-kee" id="V3J-8Q-y3W"/>
                     </connections>
