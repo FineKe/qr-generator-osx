@@ -707,11 +707,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="QRMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="476" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ez3-gG-Img">
-                                <rect key="frame" x="12" y="225" width="192" height="36"/>
+                                <rect key="frame" x="12" y="225" width="188" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="X6m-wK-aie"/>
                                 </constraints>
@@ -722,16 +722,15 @@
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmM-vu-kee">
-                                <rect key="frame" x="298" y="20" width="162" height="152"/>
+                                <rect key="frame" x="294" y="20" width="162" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="152" id="itY-PK-O8o"/>
                                     <constraint firstAttribute="width" constant="162" id="oL4-Ct-3Gb"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="tvt-R6-gTQ"/>
                             </imageView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rX-W4-JO9">
-                                <rect key="frame" x="14" y="13" width="70" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7rX-W4-JO9">
+                                <rect key="frame" x="14" y="7" width="70" height="32"/>
                                 <buttonCell key="cell" type="push" title="build" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="40y-X2-OuM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -740,9 +739,8 @@
                                     <action selector="buildQR:" target="XfG-lQ-9wD" id="ZIR-1l-tdt"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-Za-I0I">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ga-Za-I0I">
                                 <rect key="frame" x="134" y="13" width="68" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WOU-XL-sJb">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -752,7 +750,7 @@
                                 </connections>
                             </button>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL0-TR-JzM">
-                                <rect key="frame" x="338" y="200" width="100" height="50"/>
+                                <rect key="frame" x="334" y="200" width="100" height="50"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vje-JX-TgN">
                                         <rect key="frame" x="-2" y="17" width="44" height="17"/>
@@ -786,14 +784,40 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R6N-QB-t1V" customClass="DestinationImageView" customModule="QRMaker" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0dm-EL-fim"/>
+                                    <constraint firstAttribute="height" constant="100" id="VF9-XG-6UN"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Twx-fq-OSS"/>
+                            </imageView>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYz-ct-3iZ">
+                                <rect key="frame" x="172" y="84" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="eKt-q1-JDO"/>
+                                    <constraint firstAttribute="height" constant="75" id="hBi-Gp-aW7"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CJx-mB-skB"/>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="wmM-vu-kee" firstAttribute="leading" secondItem="R6N-QB-t1V" secondAttribute="trailing" constant="174" id="1fp-Df-jkp"/>
+                            <constraint firstItem="5ga-Za-I0I" firstAttribute="leading" secondItem="7rX-W4-JO9" secondAttribute="trailing" constant="62" id="2Nd-iF-tbZ"/>
+                            <constraint firstItem="R6N-QB-t1V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="5ne-i1-2Ph"/>
+                            <constraint firstItem="5ga-Za-I0I" firstAttribute="bottom" secondItem="wmM-vu-kee" secondAttribute="bottom" id="6ek-6o-Mbc"/>
+                            <constraint firstItem="5ga-Za-I0I" firstAttribute="top" secondItem="rYz-ct-3iZ" secondAttribute="bottom" constant="43" id="ENK-hC-L8F"/>
+                            <constraint firstItem="rYz-ct-3iZ" firstAttribute="top" secondItem="ez3-gG-Img" secondAttribute="bottom" constant="66" id="M9Y-54-VAw"/>
                             <constraint firstAttribute="bottom" secondItem="wmM-vu-kee" secondAttribute="bottom" constant="20" id="O4s-Wc-oi9"/>
                             <constraint firstItem="ez3-gG-Img" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="9" id="SLs-vD-557"/>
                             <constraint firstAttribute="trailing" secondItem="VL0-TR-JzM" secondAttribute="trailing" constant="42" id="TDh-sg-XhG"/>
                             <constraint firstAttribute="trailing" secondItem="wmM-vu-kee" secondAttribute="trailing" constant="20" id="Z3M-Tu-rqe"/>
+                            <constraint firstItem="7rX-W4-JO9" firstAttribute="leading" secondItem="R6N-QB-t1V" secondAttribute="leading" id="cLm-J8-gDW"/>
                             <constraint firstItem="VL0-TR-JzM" firstAttribute="leading" secondItem="ez3-gG-Img" secondAttribute="trailing" constant="136" id="eaQ-hT-XTN"/>
+                            <constraint firstItem="R6N-QB-t1V" firstAttribute="top" secondItem="ez3-gG-Img" secondAttribute="bottom" constant="53" id="fii-Ao-oji"/>
                             <constraint firstItem="ez3-gG-Img" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="gI6-nv-uTH"/>
+                            <constraint firstItem="rYz-ct-3iZ" firstAttribute="leading" secondItem="R6N-QB-t1V" secondAttribute="trailing" constant="52" id="i06-rH-enX"/>
+                            <constraint firstItem="7rX-W4-JO9" firstAttribute="top" secondItem="R6N-QB-t1V" secondAttribute="bottom" constant="37" id="kiq-9V-0ay"/>
                             <constraint firstItem="wmM-vu-kee" firstAttribute="top" secondItem="VL0-TR-JzM" secondAttribute="bottom" constant="28" id="oft-6g-kPu"/>
                             <constraint firstItem="VL0-TR-JzM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="tG3-U7-pOl"/>
                         </constraints>
@@ -801,8 +825,10 @@
                     <connections>
                         <outlet property="chooseColorButton" destination="1Hr-Y4-acb" id="JUX-jX-jGJ"/>
                         <outlet property="colorButton" destination="1Hr-Y4-acb" id="zt4-2n-Tdz"/>
+                        <outlet property="destinationView" destination="R6N-QB-t1V" id="IlP-ue-Ma4"/>
                         <outlet property="inputText" destination="ez3-gG-Img" id="5I8-pV-haf"/>
                         <outlet property="outputImage" destination="wmM-vu-kee" id="V3J-8Q-y3W"/>
+                        <outlet property="testView" destination="rYz-ct-3iZ" id="hNJ-NW-MJi"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

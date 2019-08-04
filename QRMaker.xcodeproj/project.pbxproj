@@ -11,6 +11,7 @@
 		114846CA22DF58F40051C528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114846C922DF58F40051C528 /* ViewController.swift */; };
 		114846CC22DF58F50051C528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114846CB22DF58F50051C528 /* Assets.xcassets */; };
 		114846CF22DF58F50051C528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 114846CD22DF58F50051C528 /* Main.storyboard */; };
+		11F044D322F5F54C00448ACD /* DestinationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F044D222F5F54C00448ACD /* DestinationImageView.swift */; };
 		6D99AA4B859EDB2577BB7B75 /* Pods_QRMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2D1C3CD3DA134AF2089E5A /* Pods_QRMaker.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		114846CE22DF58F50051C528 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		114846D022DF58F50051C528 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		114846D122DF58F50051C528 /* QRMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRMaker.entitlements; sourceTree = "<group>"; };
+		11F044D222F5F54C00448ACD /* DestinationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationImageView.swift; sourceTree = "<group>"; };
 		286E4FCC62ED010FE4E78FB0 /* Pods-QRMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRMaker.release.xcconfig"; path = "Target Support Files/Pods-QRMaker/Pods-QRMaker.release.xcconfig"; sourceTree = "<group>"; };
 		7D2D1C3CD3DA134AF2089E5A /* Pods_QRMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A81C135C46D7C88AC895CB05 /* Pods-QRMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRMaker.debug.xcconfig"; path = "Target Support Files/Pods-QRMaker/Pods-QRMaker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				114846CD22DF58F50051C528 /* Main.storyboard */,
 				114846D022DF58F50051C528 /* Info.plist */,
 				114846D122DF58F50051C528 /* QRMaker.entitlements */,
+				11F044D222F5F54C00448ACD /* DestinationImageView.swift */,
 			);
 			path = QRMaker;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F044D322F5F54C00448ACD /* DestinationImageView.swift in Sources */,
 				114846CA22DF58F40051C528 /* ViewController.swift in Sources */,
 				114846C822DF58F40051C528 /* AppDelegate.swift in Sources */,
 			);
@@ -356,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.finefine.QRMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -377,7 +381,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.finefine.QRMaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
